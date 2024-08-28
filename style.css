@@ -1,0 +1,180 @@
+* {
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #131313;
+}
+
+.container {
+    position: relative;
+    margin: 0 20px;
+}
+
+.container .card {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background-color: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container .card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #03A9F4;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+.container .card:hover:before {
+    clip-path: circle(300px at 80% -20%);
+}
+
+.container .card .imgbox {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+
+.container .card:hover .imgbox {
+    top: 0;
+    transform: translateY(0%);
+}
+
+.container .card .imgbox img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+}
+
+.container .card .contentbox {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container .card:hover .contentbox {
+    height: 210px;
+}
+
+.container .card .contentbox h2 {
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+}
+
+.container .card .contentbox .price, 
+.container .card .contentbox .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .card:hover .contentbox .price {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.container .card:hover .contentbox .color {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
+}
+
+.container .card .contentbox .price h3,
+.container .card .contentbox .color h3 {
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+.container .card .contentbox .color span {
+    display: inline-block;
+    width: 10px; /* adjust the size of the circle */
+    height: 10px;
+    border-radius: 50%; /* make it circular */
+    margin: 0 5px; /* add 5px gap between circles */
+}
+
+
+.container .card .contentbox .price span {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 20px;
+    display: inline-block;
+    color: #111111;
+    background-color: #FFFFFF;
+    margin: 0 5px;
+    transition: 0.5s;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container .card .contentbox .color span:nth-child(2) {
+    background-color: #9BDC28;
+}
+
+.container .card .contentbox .color span:nth-child(3) {
+    background-color: #03A9F4;
+}
+
+.container .card .contentbox .color span:nth-child(4) {
+    background-color: #E91E63;
+}
+
+.container .card .contentbox a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #111111;
+    opacity: 0;
+    transform: translate(50px);
+    transition: 0.5s;
+}
+
+.container .card:hover .contentbox a {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.7s;
+}
+
+.image {
+    width: 220px;
+    /* background-color: transparent; */
+}
